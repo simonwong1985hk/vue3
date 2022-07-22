@@ -10,7 +10,7 @@
   </head>
   <body class="h-full grid place-items-center">
     <div id="app">
-      <section>
+      <section v-show="assignments.filter(a => ! a.completed).length">
         <h2 class="font-semibold mb-2">In Progress</h2>
         <ul>
           <li
@@ -25,7 +25,7 @@
         </ul>
       </section>
 
-      <section class="mt-8">
+      <section v-show="assignments.filter(a => a.completed).length" class="mt-8">
         <h2 class="font-semibold mb-2">Completed</h2>
         <ul>
           <li
