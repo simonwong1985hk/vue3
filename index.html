@@ -30,7 +30,9 @@
     <div id="app">
       <input type="text" v-model="message" />
       {{ message }}
-      <button :class="buttonClasses">click me</button>
+      <button :class="active ? 'text-green' : 'text-red'" v-on:click="toggle">
+        click me
+      </button>
     </div>
 
     <script>
@@ -38,8 +40,14 @@
         data() {
           return {
             message: "Hello Vue!",
-            buttonClasses: "text-green",
+            active: false,
           };
+        },
+
+        methods: {
+          toggle() {
+            this.active = !this.active;
+          },
         },
 
         mounted() {
