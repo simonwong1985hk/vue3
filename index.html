@@ -20,6 +20,12 @@
             message: "Hello Vue!",
           };
         },
+
+        mounted() {
+          setTimeout(() => {
+            this.message = "Hello World!";
+          }, 3000);
+        },
       }).mount("#app");
     </script>
   </body>
