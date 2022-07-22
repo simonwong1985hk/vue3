@@ -30,7 +30,7 @@
     <div id="app">
       <input type="text" v-model="message" />
       {{ message }}
-      <button :class="active ? 'text-green' : 'text-red'" v-on:click="toggle">
+      <button :class="active ? 'text-green' : 'text-red'" @click="toggle">
         click me
       </button>
     </div>
