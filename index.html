@@ -16,12 +16,21 @@
         display: grid;
         place-items: center;
       }
+
+      .text-green {
+        color: green;
+      }
+
+      .text-red {
+        color: red;
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <input type="text" v-model="message" />
       {{ message }}
+      <button v-bind:class="buttonClasses">click me</button>
     </div>
 
     <script>
@@ -29,6 +38,7 @@
         data() {
           return {
             message: "Hello Vue!",
+            buttonClasses: "text-green",
           };
         },
 
