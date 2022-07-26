@@ -15,11 +15,7 @@ export default {
 
   data() {
     return {
-      assignments: [
-        { id: 1, title: "Assignment 1", completed: false, tag: "math" },
-        { id: 2, title: "Assignment 2", completed: false, tag: "science" },
-        { id: 3, title: "Assignment 3", completed: false, tag: "math" },
-      ],
+      assignments: [],
     };
   },
 
@@ -34,6 +30,14 @@ export default {
         ),
       };
     },
+  },
+
+  created() {
+    fetch("http://localhost:3001/assignments")
+      .then((response) => response.json())
+      .then((assignments) => {
+        this.assignments = assignments;
+      });
   },
 
   methods: {
