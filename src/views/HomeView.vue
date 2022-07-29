@@ -1,13 +1,26 @@
 <script setup>
-import { useFlash } from "@/composables/useFlash";
+import { useStorage } from "@/composables/useStorage";
 
-let { flash } = useFlash();
+let food = useStorage("food", "salad");
+let age = useStorage("age");
+
+let obj = useStorage("obj", { name: "John" });
+
+setTimeout(() => {
+  obj.value.name = "Jane";
+}, 3000);
 </script>
 
 <template>
   <main>
     <p>
-      <button @click="flash('Home', 'It Works!')">Click Me</button>
+      What is your favorite food?
+      <input type="text" v-model="food" />
+    </p>
+
+    <p>
+      How old are you?
+      <input type="text" v-model="age" />
     </p>
   </main>
 </template>
