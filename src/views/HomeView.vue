@@ -4,6 +4,6 @@ import Quiz from "@/components/Quiz/Quiz.vue";
 
 <template>
   <main>
-    <Quiz :quiz="{ name: 'My First Quiz', question: [] }" />
+    <Quiz />
   </main>
 </template>
