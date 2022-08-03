@@ -1,5 +1,7 @@
 <script setup>
-import { counter } from "../stores/counterStore.js";
+import { useCounterStore } from "@/stores/CounterStore";
+
+let counter = useCounterStore();
 </script>
 
 <template>
